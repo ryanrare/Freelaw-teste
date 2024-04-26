@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./gerenciador-de-eventos-e-relatorios/sql:/docker-entrypoint-initdb.d
+    networks:
+      - my-network
+
+  django:
+    build: ./gerenciador-de-eventos-e-relatorios
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    volumes:
+      - ./gerenciador-de-eventos-e-relatorios:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - my-network
+
+  frontend:
+    build: ./event_user_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - django
+    volumes:
+      - ./event_user_frontend/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+
+networks:
+  my-network:
+    driver: bridge

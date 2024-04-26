@@ -1,0 +1,5 @@
+.MuiMenu-paper {
+  background-color: #071330; /* Cor de fundo do menu */
+  scrollbar-width: thin; /* Largura fina da barra de rolagem */
+  scrollbar-color: rgba(245, 245, 245, 0.5) #d7d9de00; /* Cor da barra de rolagem */
+}
