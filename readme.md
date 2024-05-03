@@ -77,13 +77,9 @@ ps: O Processamento de queries pesadas / relatórios, acontece em uma tread para
 - - se solicitado outro filtro, faria a mesma coisa. Solicitado o mesmo, pegaria do cache e nao faria requisição para o back.
 - - houve alterações no evento? resetaria o banco de cache e reiniciaria o fluxo.
 - Não implementado o crud completo de usuarios
-- Não limpei o código
-- Pouco tempo (Obrigado pelo tempo extra)
 
 #### Pontos Fortes:
-- Fiz em 4 dias
 - Implementei o redux
-- Entendi bem a regra
 - Boa documentação dos endpoints, onde é possivel fazer boas integrações- [hhtp://localhost:8000/swwager/]() ![dia](docs/swwager.png)
 - testes unitários
 - fullstack
@@ -93,9 +89,6 @@ ps: O Processamento de queries pesadas / relatórios, acontece em uma tread para
 - e mais!
 #### Endpoints do swweager:
 
-
-
-### PS: Se tivesse mais tempo, esse projeto ficaria perfeito, eu juro!
 
 #### Dúvidas? 
 [Meu Linkedin](https://www.linkedin.com/in/ryan-victor-alves/)
